@@ -1,18 +1,19 @@
-%define		fname	Babel
+%define		pkgname	babel
 Summary:	Babel Python library
 Summary(pl.UTF-8):	Biblioteka Babel do Pythona
-Name:		python-%{fname}
+Name:		python-%{pkgname}
 Version:	0.9.5
 Release:	1
 License:	BSD-like
 Group:		Development/Languages/Python
-Source0:	ftp://ftp.edgewall.com/pub/babel/%{fname}-%{version}.tar.gz
+Source0:	ftp://ftp.edgewall.com/pub/babel/Babel-%{version}.tar.gz
 # Source0-md5:	05603f058644f81b9b5f75d0161a14dd
 URL:		http://babel.edgewall.org/
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 %pyrequires_eq	python-modules
+Obsoletes:	python-Babel
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -22,7 +23,7 @@ utilities that assist with internationalizing and localizing Python
 applications (in particular web-based applications).
 
 %prep
-%setup -q -n %{fname}-%{version}
+%setup -q -n Babel-%{version}
 
 %build
 %{__python} setup.py build
@@ -42,5 +43,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/pybabel
 %{py_sitescriptdir}/babel
 %if "%{py_ver}" > "2.4"
-%{py_sitescriptdir}/%{fname}-%{version}-py*.egg-info
+%{py_sitescriptdir}/*.egg-info
 %endif
