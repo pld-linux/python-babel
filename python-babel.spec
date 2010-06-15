@@ -3,7 +3,7 @@ Summary:	Babel Python library
 Summary(pl.UTF-8):	Biblioteka Babel do Pythona
 Name:		python-%{fname}
 Version:	0.9.5
-Release:	0.1
+Release:	1
 License:	BSD-like
 Group:		Development/Languages/Python
 Source0:	ftp://ftp.edgewall.com/pub/babel/%{fname}-%{version}.tar.gz
@@ -11,9 +11,7 @@ Source0:	ftp://ftp.edgewall.com/pub/babel/%{fname}-%{version}.tar.gz
 URL:		http://babel.edgewall.org/
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
-# if py_postclean is used
 BuildRequires:	rpmbuild(macros) >= 1.219
-#%pyrequires_eq	python-libs
 %pyrequires_eq	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -21,13 +19,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Babel is a Python library that provides an integrated collection of
 utilities that assist with internationalizing and localizing Python
-applications (in particular web-based applications.)
+applications (in particular web-based applications).
 
 %prep
 %setup -q -n %{fname}-%{version}
 
 %build
-export CFLAGS="%{rpmcflags}"
 %{__python} setup.py build
 
 %install
