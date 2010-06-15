@@ -58,7 +58,14 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc COPYING README.txt doc/*
 %attr(755,root,root) %{_bindir}/pybabel
-%{py_sitescriptdir}/babel
+%dir %{py_sitescriptdir}/babel
+%{py_sitescriptdir}/babel/*.dat
+%{py_sitescriptdir}/babel/*.py[co]
+%dir %{py_sitescriptdir}/babel/localedata
+# TODO: %lang tag
+%{py_sitescriptdir}/babel/localedata/*.dat
+%dir %{py_sitescriptdir}/babel/messages
+%{py_sitescriptdir}/babel/messages/*.py[co]
 %if "%{py_ver}" > "2.4"
 %{py_sitescriptdir}/*.egg-info
 %endif
