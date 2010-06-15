@@ -1,3 +1,9 @@
+# TODO
+# - lang tag /usr/share/python*/site-packages/babel/localedata/*
+#
+# Conditional build:
+%bcond_without	apidocs		# do not build and package API docs
+
 %define		pkgname	babel
 Summary:	Babel Python library
 Summary(pl.UTF-8):	Biblioteka Babel do Pythona
@@ -22,8 +28,17 @@ Babel is a Python library that provides an integrated collection of
 utilities that assist with internationalizing and localizing Python
 applications (in particular web-based applications).
 
+%package apidocs
+Summary:	Python Babel API documentation
+Group:		Documentation
+
+%description apidocs
+Python Babel API documentation.
+
 %prep
 %setup -q -n Babel-%{version}
+
+mv doc/api apidoc
 
 %build
 %{__python} setup.py build
@@ -34,14 +49,22 @@ rm -rf $RPM_BUILD_ROOT
 	--optimize=2 \
 	--root=$RPM_BUILD_ROOT
 
+%py_postclean
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING README.txt doc
+%doc COPYING README.txt doc/*
 %attr(755,root,root) %{_bindir}/pybabel
 %{py_sitescriptdir}/babel
 %if "%{py_ver}" > "2.4"
 %{py_sitescriptdir}/*.egg-info
+%endif
+
+%if %{with apidocs}
+%files apidocs
+%defattr(644,root,root,755)
+%doc apidoc/*
 %endif
