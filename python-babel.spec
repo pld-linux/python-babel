@@ -9,7 +9,7 @@ Summary:	Babel Python library
 Summary(pl.UTF-8):	Biblioteka Babel do Pythona
 Name:		python-%{pkgname}
 Version:	0.9.5
-Release:	1
+Release:	2
 License:	BSD-like
 Group:		Development/Languages/Python
 Source0:	ftp://ftp.edgewall.com/pub/babel/Babel-%{version}.tar.gz
