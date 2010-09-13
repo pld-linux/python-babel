@@ -16,6 +16,7 @@ Source0:	ftp://ftp.edgewall.com/pub/babel/Babel-%{version}.tar.gz
 # Source0-md5:	05603f058644f81b9b5f75d0161a14dd
 URL:		http://babel.edgewall.org/
 BuildRequires:	python-devel
+BuildRequires:	python-devel-tools
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 %pyrequires_eq	python-modules
