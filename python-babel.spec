@@ -66,9 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitescriptdir}/babel/localedata/*.dat
 %dir %{py_sitescriptdir}/babel/messages
 %{py_sitescriptdir}/babel/messages/*.py[co]
-%if "%{py_ver}" > "2.4"
 %{py_sitescriptdir}/*.egg-info
-%endif
 
 %if %{with apidocs}
 %files apidocs
