@@ -8,12 +8,12 @@
 Summary:	Babel Python library
 Summary(pl.UTF-8):	Biblioteka Babel do Pythona
 Name:		python-%{pkgname}
-Version:	0.9.5
-Release:	3
+Version:	0.9.6
+Release:	1
 License:	BSD-like
 Group:		Development/Languages/Python
 Source0:	ftp://ftp.edgewall.com/pub/babel/Babel-%{version}.tar.gz
-# Source0-md5:	05603f058644f81b9b5f75d0161a14dd
+# Source0-md5:	f0edcad03dfdb5505f337ef1a7690325
 URL:		http://babel.edgewall.org/
 BuildRequires:	python-devel
 BuildRequires:	python-devel-tools
