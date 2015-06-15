@@ -34,6 +34,7 @@ BuildRequires:	python3-setuptools
 BuildRequires:	python3-modules
 BuildRequires:	python3-pytz
 %endif
+%{?with_doc:BuildRequires: sphinx-pdg}
 Requires:	python-modules
 Requires:	python-pytz
 Obsoletes:	python-Babel
