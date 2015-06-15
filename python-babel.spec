@@ -13,21 +13,22 @@ Summary:	Babel Python library
 Summary(pl.UTF-8):	Biblioteka Babel do Pythona
 Name:		python-%{module}
 Version:	1.3
-Release:	2
+Release:	3
 License:	BSD-like
 Group:		Development/Languages/Python
 Source0:	http://pypi.python.org/packages/source/B/Babel/Babel-%{version}.tar.gz
 # Source0-md5:	5264ceb02717843cbc9ffce8e6e06bdb
-URL:		http://babel.edgewall.org/
+URL:		http://babel.pocoo.org/
 %if %{with python2}
 BuildRequires:	python-devel
 BuildRequires:	python-devel-tools
+BuildRequires:	python3-setuptools
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 %endif
 %if %{with python3}
 BuildRequires:	python3-devel
-BuildRequires:	python3-distribute
+BuildRequires:	python3-setuptools
 BuildRequires:	python3-modules
 %endif
 
@@ -44,8 +45,8 @@ applications (in particular web-based applications).
 # %description -l pl.UTF-8
 
 %package -n python3-%{module}
-Summary:	-
-Summary(pl.UTF-8):	-
+Summary:	Babel Python library
+Summary(pl.UTF-8):	Biblioteka Babel do Pythona
 Group:		Libraries/Python
 Requires:	python3-modules
 
