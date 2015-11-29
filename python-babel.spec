@@ -23,7 +23,7 @@ BuildRequires:	python-devel-tools
 BuildRequires:	python-setuptools
 BuildRequires:	python-pytz
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 %endif
 %if %{with python3}
 BuildRequires:	python3-devel
