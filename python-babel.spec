@@ -16,6 +16,7 @@ Group:		Development/Languages/Python
 #Source0Download: https://pypi.python.org/pypi/Babel
 Source0:	https://pypi.python.org/packages/source/B/Babel/Babel-%{version}.tar.gz
 # Source0-md5:	cab63d158ceed3a809703711cfb8cbd5
+Patch0:		tz.patch
 URL:		http://babel.pocoo.org/
 %if %{with python2}
 BuildRequires:	python-devel
@@ -79,6 +80,7 @@ Dokumentacja API biblioteki Pythona Babel.
 
 %prep
 %setup -q -n Babel-%{version}
+%patch0 -p1
 
 %build
 %if %{with python2}
