@@ -22,22 +22,22 @@ Source0:	https://pypi.python.org/packages/source/B/Babel/Babel-%{version}.tar.gz
 Patch0:		tz.patch
 URL:		http://babel.pocoo.org/
 %if %{with python2}
-BuildRequires:	python-devel
-BuildRequires:	python-devel-tools
+BuildRequires:	python-devel >= 1:2.6
+BuildRequires:	python-devel-tools >= 1:2.6
 BuildRequires:	python-setuptools
 BuildRequires:	python-pytz
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.710
 %endif
 %if %{with python3}
-BuildRequires:	python3-devel
-BuildRequires:	python3-devel-tools
+BuildRequires:	python3-devel >= 1:3.3
+BuildRequires:	python3-devel-tools >= 1:3.3
 BuildRequires:	python3-setuptools
-BuildRequires:	python3-modules
+BuildRequires:	python3-modules >= 1:3.3
 BuildRequires:	python3-pytz
 %endif
 %{?with_doc:BuildRequires: sphinx-pdg}
-Requires:	python-modules
+Requires:	python-modules >= 1:2.6
 Requires:	python-pytz
 Obsoletes:	python-Babel
 BuildArch:	noarch
@@ -57,7 +57,7 @@ Pythonie (w szczególności aplikacji WWW).
 Summary:	Babel - internationalization library for Python 3
 Summary(pl.UTF-8):	Babel - biblioteka umiędzynaradawiająca dla Pythona 3
 Group:		Libraries/Python
-Requires:	python3-modules
+Requires:	python3-modules >= 1:3.3
 Requires:	python3-pytz
 
 %description -n python3-%{module}
@@ -97,7 +97,7 @@ Dokumentacja API biblioteki Pythona Babel.
 %if %{with doc}
 cd docs
 %{__make} -j1 html
-rm -rf _build/html/_sources
+%{__rm} -r _build/html/_sources
 %endif
 
 %install
@@ -140,10 +140,7 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitescriptdir}/babel/localedata/root.dat
 %dir %{py_sitescriptdir}/babel/messages
 %{py_sitescriptdir}/babel/messages/*.py[co]
-
-%if "%{py_ver}" > "2.4"
 %{py_sitescriptdir}/Babel-%{version}-py*.egg-info
-%endif
 %endif
 
 %if %{with python3}
