@@ -27,6 +27,7 @@ BuildRequires:	python-modules >= 1:2.6
 BuildRequires:	python-setuptools
 BuildRequires:	python-pytz >= 0a
 %if %{with tests}
+BuildRequires:	python-freezegun
 BuildRequires:	python-pytest
 %endif
 %endif
@@ -37,6 +38,7 @@ BuildRequires:	python3-modules >= 1:3.3
 BuildRequires:	python3-setuptools
 BuildRequires:	python3-pytz >= 0a
 %if %{with tests}
+BuildRequires:	python3-freezegun
 BuildRequires:	python3-pytest
 %endif
 %endif
