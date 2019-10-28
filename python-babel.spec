@@ -5,13 +5,13 @@
 %bcond_without	python2	# CPython 2.x module
 %bcond_without	python3	# CPython 3.x module
 
-%define		module 	babel
+%define		module	babel
 %define		pypi_name	Babel
 Summary:	Babel - internationalization library for Python 2
 Summary(pl.UTF-8):	Babel - biblioteka umiędzynaradawiająca dla Pythona 2
 Name:		python-%{module}
 Version:	2.6.0
-Release:	2
+Release:	2.1
 License:	BSD-like
 Group:		Development/Languages/Python
 #Source0Download: https://pypi.org/simple/Babel/
