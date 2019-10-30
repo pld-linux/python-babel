@@ -10,13 +10,13 @@
 Summary:	Babel - internationalization library for Python 2
 Summary(pl.UTF-8):	Babel - biblioteka umiędzynaradawiająca dla Pythona 2
 Name:		python-%{module}
-Version:	2.6.0
-Release:	2.1
+Version:	2.7.0
+Release:	1
 License:	BSD-like
 Group:		Development/Languages/Python
-#Source0Download: https://pypi.org/simple/Babel/
+#Source0Download: https://pypi.org/simple/babel/
 Source0:	https://files.pythonhosted.org/packages/source/B/Babel/%{pypi_name}-%{version}.tar.gz
-# Source0-md5:	c384ac03026e8fe6f9b90f55201f1bff
+# Source0-md5:	83c158b7dae9135750a7cf204e6e2eea
 URL:		http://babel.pocoo.org/
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
@@ -25,7 +25,7 @@ BuildRequires:	python-devel >= 1:2.7
 BuildRequires:	python-devel-tools >= 1:2.7
 BuildRequires:	python-modules >= 1:2.7
 BuildRequires:	python-setuptools
-BuildRequires:	python-pytz >= 0a
+BuildRequires:	python-pytz >= 2015.7
 %if %{with tests}
 BuildRequires:	python-freezegun
 BuildRequires:	python-pytest
@@ -37,7 +37,7 @@ BuildRequires:	python3-devel >= 1:3.4
 BuildRequires:	python3-devel-tools >= 1:3.4
 BuildRequires:	python3-modules >= 1:3.4
 BuildRequires:	python3-setuptools
-BuildRequires:	python3-pytz >= 0a
+BuildRequires:	python3-pytz >= 2015.7
 %if %{with tests}
 BuildRequires:	python3-freezegun
 BuildRequires:	python3-pytest
