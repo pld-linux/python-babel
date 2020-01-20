@@ -10,13 +10,13 @@
 Summary:	Babel - internationalization library for Python 2
 Summary(pl.UTF-8):	Babel - biblioteka umiędzynaradawiająca dla Pythona 2
 Name:		python-%{module}
-Version:	2.7.0
+Version:	2.8.0
 Release:	1
 License:	BSD-like
 Group:		Development/Languages/Python
 #Source0Download: https://pypi.org/simple/babel/
 Source0:	https://files.pythonhosted.org/packages/source/B/Babel/%{pypi_name}-%{version}.tar.gz
-# Source0-md5:	83c158b7dae9135750a7cf204e6e2eea
+# Source0-md5:	6fad9772e75421969ddb41975483abdf
 URL:		http://babel.pocoo.org/
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
@@ -44,9 +44,8 @@ BuildRequires:	python3-pytest
 BuildRequires:	python3-pytest-cov
 %endif
 %endif
-%{?with_doc:BuildRequires: sphinx-pdg}
+%{?with_doc:BuildRequires:	sphinx-pdg}
 Requires:	python-modules >= 1:2.7
-Requires:	python-pytz >= 0a
 Obsoletes:	python-Babel
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -66,7 +65,6 @@ Summary:	Babel - internationalization library for Python 3
 Summary(pl.UTF-8):	Babel - biblioteka umiędzynaradawiająca dla Pythona 3
 Group:		Libraries/Python
 Requires:	python3-modules >= 1:3.4
-Requires:	python3-pytz >= 0a
 
 %description -n python3-%{module}
 Babel is a Python library that provides an integrated collection of
@@ -97,7 +95,7 @@ Dokumentacja API biblioteki Pythona Babel.
 %py_build
 
 %if %{with tests}
-py.test-2 tests
+%{__python} -m pytest tests
 %endif
 %endif
 
@@ -105,7 +103,7 @@ py.test-2 tests
 %py3_build
 
 %if %{with tests}
-py.test-3 tests
+%{__python3} -m pytest tests
 %endif
 %endif
 
