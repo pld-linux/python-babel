@@ -10,13 +10,13 @@
 Summary:	Babel - internationalization library for Python 2
 Summary(pl.UTF-8):	Babel - biblioteka umiędzynaradawiająca dla Pythona 2
 Name:		python-%{module}
-Version:	2.8.0
-Release:	4
+Version:	2.9.1
+Release:	1
 License:	BSD-like
 Group:		Development/Languages/Python
 #Source0Download: https://pypi.org/simple/babel/
 Source0:	https://files.pythonhosted.org/packages/source/B/Babel/%{pypi_name}-%{version}.tar.gz
-# Source0-md5:	6fad9772e75421969ddb41975483abdf
+# Source0-md5:	7166099733d78aa857d74fa50d8ff58c
 URL:		http://babel.pocoo.org/
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
