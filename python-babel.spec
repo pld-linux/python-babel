@@ -128,11 +128,11 @@ rm -rf $RPM_BUILD_ROOT
 
 find $RPM_BUILD_ROOT%{py_sitescriptdir}/babel/locale-data -name '*.dat' | \
 	sed -e "s#^$RPM_BUILD_ROOT##" | \
-	sed -ne 's,.*/\([a-z][a-z][a-z]\?\)\(_[0-9][0-9][0-9]\|_[A-Z][a-z][a-z][a-z]\)\?\(_[A-Z][A-Z]\)\?\(_POSIX\)\?\.dat$,%lang(\1\3) &,p' > py2.lang
+	sed -ne 's,.*/\([a-z][a-z][a-z]\?\)\(_[0-9][0-9][0-9]\|_[A-Z][a-z][a-z][a-z]\)\?\(_[A-Z][A-Z]\)\?\(_POSIX\)\?\.dat$,&,p' > py2.lang
 
 find $RPM_BUILD_ROOT%{py3_sitescriptdir}/babel/locale-data -name '*.dat' | \
 	sed -e "s#^$RPM_BUILD_ROOT##" | \
-	sed -ne 's,.*/\([a-z][a-z][a-z]\?\)\(_[0-9][0-9][0-9]\|_[A-Z][a-z][a-z][a-z]\)\?\(_[A-Z][A-Z]\)\?\(_POSIX\)\?\.dat,%lang(\1\3) &,p' > py3.lang
+	sed -ne 's,.*/\([a-z][a-z][a-z]\?\)\(_[0-9][0-9][0-9]\|_[A-Z][a-z][a-z][a-z]\)\?\(_[A-Z][A-Z]\)\?\(_POSIX\)\?\.dat,&,p' > py3.lang
 
 %clean
 rm -rf $RPM_BUILD_ROOT
