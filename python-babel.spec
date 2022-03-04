@@ -46,7 +46,7 @@ BuildRequires:	python3-pytest-cov
 %endif
 %{?with_doc:BuildRequires:	sphinx-pdg}
 Requires:	python-modules >= 1:2.7
-Obsoletes:	python-Babel
+Obsoletes:	python-Babel < 0.9.5-2
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -95,6 +95,8 @@ Dokumentacja API biblioteki Pythona Babel.
 %py_build
 
 %if %{with tests}
+# few frontend tests have some (DST-related?) issues with local timezones
+TZ=UTC \
 %{__python} -m pytest tests
 %endif
 %endif
@@ -103,6 +105,7 @@ Dokumentacja API biblioteki Pythona Babel.
 %py3_build
 
 %if %{with tests}
+TZ=UTC \
 %{__python3} -m pytest tests
 %endif
 %endif
