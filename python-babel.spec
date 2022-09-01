@@ -10,6 +10,7 @@
 Summary:	Babel - internationalization library for Python 2
 Summary(pl.UTF-8):	Babel - biblioteka umiędzynaradawiająca dla Pythona 2
 Name:		python-%{module}
+# keep 2.9.x here for python2 support
 Version:	2.9.1
 Release:	4
 License:	BSD-like
@@ -96,6 +97,7 @@ Dokumentacja API biblioteki Pythona Babel.
 
 %if %{with tests}
 # few frontend tests have some (DST-related?) issues with local timezones
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 TZ=UTC \
 %{__python} -m pytest tests
 %endif
@@ -105,6 +107,7 @@ TZ=UTC \
 %py3_build
 
 %if %{with tests}
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 TZ=UTC \
 %{__python3} -m pytest tests
 %endif
