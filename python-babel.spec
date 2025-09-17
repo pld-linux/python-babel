@@ -12,7 +12,7 @@ Summary(pl.UTF-8):	Babel - biblioteka umiędzynaradawiająca dla Pythona 2
 Name:		python-%{module}
 # keep 2.9.x here for python2 support
 Version:	2.9.1
-Release:	4
+Release:	5
 License:	BSD-like
 Group:		Development/Languages/Python
 #Source0Download: https://pypi.org/simple/babel/
